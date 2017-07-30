@@ -49,8 +49,10 @@ public class LambdaTest1 {
                 add(new Student("stu4",95.0));
             }
         };
-        Collections.sort(studentList,(s1,s2)-> Double.compare(s1.getScore(),s2.getScore()));
+//        Collections.sort(studentList,(s1,s2)-> Double.compare(s1.getScore(),s2.getScore()));
+        Collections.sort(studentList,Comparator.comparing(Student::getScore));
         System.out.println(studentList);
+
     }
 
     @Test
