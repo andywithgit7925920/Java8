@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 /**
  * 延迟执行
  * Created by ZhangYuZhong on 2017/7/30.
@@ -34,6 +36,6 @@ public class StreamTest2 {
     public void test(){
         Stream<Student> stream = Stream.of(stuArr).filter(this::filter);
         System.out.println("split-------------------------------------");
-        List<Student> studentList = stream.collect(Collectors.toList());
+        List<Student> studentList = stream.collect(toList());
     }
 }
