@@ -1,0 +1,162 @@
+[
+  {
+    "country": "china",
+    "movies": [
+      {
+        "directorList": [
+          {
+            "age": 60,
+            "country": "china",
+            "name": "葛优"
+          },
+          {
+            "age": 53,
+            "country": "us",
+            "name": "巩俐"
+          },
+          {
+            "age": 51,
+            "country": "china",
+            "name": "姜武"
+          },
+          {
+            "age": 49,
+            "country": "china",
+            "name": "郭涛"
+          }
+        ],
+        "movieName": "活着",
+        "officeBox": 31000
+      },
+      {
+        "directorList": [
+          {
+            "age": 53,
+            "country": "china",
+            "name": "李连杰"
+          },
+          {
+            "age": 54,
+            "country": "china",
+            "name": "梁朝伟"
+          },
+          {
+            "age": 54,
+            "country": "us",
+            "name": "甄子丹"
+          },
+          {
+            "age": 53,
+            "country": "us",
+            "name": "巩俐"
+          }
+        ],
+        "movieName": "英雄",
+        "officeBox": 59000
+      },
+      {
+        "directorList": [
+          {
+            "age": 47,
+            "country": "us",
+            "name": "马特·达蒙"
+          },
+          {
+            "age": 54,
+            "country": "china",
+            "name": "梁朝伟"
+          },
+          {
+            "age": 54,
+            "country": "us",
+            "name": "甄子丹"
+          },
+          {
+            "age": 57,
+            "country": "china",
+            "name": "刘德华 "
+          }
+        ],
+        "movieName": "长城",
+        "officeBox": 34000
+      }
+    ],
+    "name": "张艺谋"
+  },
+  {
+    "country": "us",
+    "movies": [
+      {
+        "directorList": [
+          {
+            "age": 57,
+            "country": "china",
+            "name": "刘德华 "
+          },
+          {
+            "age": 60,
+            "country": "china",
+            "name": "葛优"
+          }
+        ],
+        "movieName": "天下无贼",
+        "officeBox": 23000
+      },
+      {
+        "directorList": [
+          {
+            "age": 41,
+            "country": "china",
+            "name": "舒淇 "
+          },
+          {
+            "age": 60,
+            "country": "china",
+            "name": "葛优"
+          }
+        ],
+        "movieName": "非诚勿扰",
+        "officeBox": 56000
+      },
+      {
+        "directorList": [
+          {
+            "age": 53,
+            "country": "us",
+            "name": "巩俐"
+          },
+          {
+            "age": 60,
+            "country": "china",
+            "name": "葛优"
+          }
+        ],
+        "movieName": "没完没了",
+        "officeBox": 34000
+      }
+    ],
+    "name": "冯小刚"
+  },
+  {
+    "country": "china",
+    "movies": [
+      {
+        "directorList": [
+          {
+            "age": 57,
+            "country": "china",
+            "name": "刘德华 "
+          },
+          {
+            "age": 54,
+            "country": "us",
+            "name": "甄子丹"
+          }
+        ],
+        "movieName": "殺破狼",
+        "officeBox": 56200
+      }
+    ],
+    "name": "叶伟信"
+  }
+]
