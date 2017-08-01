@@ -26,7 +26,7 @@
           }
         ],
         "movieName": "活着",
-        "officeBox": 31000
+        "officeBox": 6.5
       },
       {
         "directorList": [
@@ -52,7 +52,7 @@
           }
         ],
         "movieName": "英雄",
-        "officeBox": 59000
+        "officeBox": 5.4
       },
       {
         "directorList": [
@@ -78,7 +78,7 @@
           }
         ],
         "movieName": "长城",
-        "officeBox": 34000
+        "officeBox": 12.5
       }
     ],
     "name": "张艺谋"
@@ -100,7 +100,7 @@
           }
         ],
         "movieName": "天下无贼",
-        "officeBox": 23000
+        "officeBox": 7.6
       },
       {
         "directorList": [
@@ -116,7 +116,7 @@
           }
         ],
         "movieName": "非诚勿扰",
-        "officeBox": 56000
+        "officeBox": 15
       },
       {
         "directorList": [
@@ -132,7 +132,7 @@
           }
         ],
         "movieName": "没完没了",
-        "officeBox": 34000
+        "officeBox": 3.9
       }
     ],
     "name": "冯小刚"
@@ -154,7 +154,7 @@
           }
         ],
         "movieName": "殺破狼",
-        "officeBox": 56200
+        "officeBox": 18.1
       }
     ],
     "name": "叶伟信"
