@@ -1,6 +1,8 @@
 package com.java8.testcase1;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by ZhangYuZhong on 2017/8/1.
@@ -14,7 +16,12 @@ public class Director {
         this.name = name;
         this.country = country;
     }
-
+    public Integer getMovieSize(){
+        if (Objects.nonNull(this.getMovies())){
+            return getMovies().size();
+        }
+        return 0;
+    }
     public String getName() {
         return name;
     }
@@ -38,7 +45,10 @@ public class Director {
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
     }
-
+    public BigDecimal getTotalBoxOffice(){
+        BigDecimal tatal = movies.stream().map(x->x.getOfficeBox()).reduce((x,y)->(x.add(y))).get();
+        return tatal;
+    }
     @Override
     public String toString() {
         return "{"+"\n"

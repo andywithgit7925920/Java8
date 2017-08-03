@@ -1,5 +1,6 @@
 package com.java8.testcase1;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -7,10 +8,10 @@ import java.util.List;
  */
 public class Movie {
     private String movieName;
-    private Double officeBox;
+    private BigDecimal officeBox;
     private List<Actor> directorList;
 
-    public Movie(String movieName, Double officeBox, List<Actor> directorList) {
+    public Movie(String movieName, BigDecimal officeBox, List<Actor> directorList) {
         this.movieName = movieName;
         this.officeBox = officeBox;
         this.directorList = directorList;
@@ -20,7 +21,7 @@ public class Movie {
         return movieName;
     }
 
-    public Double getOfficeBox() {
+    public BigDecimal getOfficeBox() {
         return officeBox;
     }
 
@@ -32,7 +33,7 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public void setOfficeBox(Double officeBox) {
+    public void setOfficeBox(BigDecimal officeBox) {
         this.officeBox = officeBox;
     }
 
