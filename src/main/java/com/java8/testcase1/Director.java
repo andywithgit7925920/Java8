@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Created by ZhangYuZhong on 2017/8/1.
  */
-public class Director {
+public class Director  {
     private String name;
     private String country;
     private List<Movie> movies;
@@ -58,6 +58,10 @@ public class Director {
                 + "}";
     }
 
+    public int compareTo(Director o) {
+        return 0;
+    }
+
     /*@Override
     public boolean equals(Object o) {
         System.out.println("equals");
@@ -77,4 +81,6 @@ public class Director {
         result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
     }*/
+
+
 }

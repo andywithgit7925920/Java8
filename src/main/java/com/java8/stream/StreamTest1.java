@@ -3,14 +3,12 @@ package com.java8.stream;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Created by ZhangYuZhong on 2017/7/30.
+ * demo
  */
 public class StreamTest1 {
     List<Student> stuList;
@@ -39,6 +37,25 @@ public class StreamTest1 {
         System.out.println(studentList);
     }
 
+    @Test
+    public void test1_(){
+        List<Student> newList = new ArrayList<Student>();
+        Iterator<Student> iterator = stuList.iterator();
+        while (iterator.hasNext()){
+            Student s = iterator.next();
+            if (s.getScore()>85)
+                newList.add(s);
+        }
+        Collections.sort(newList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return Integer.compare(o2.getScore(),o1.getScore());
+            }
+        });
+        for (Student s : newList)
+            System.out.println(s.getName());
+    }
+
     //2.统计出平均分数
     @Test
     public void test2() {
@@ -47,39 +64,5 @@ public class StreamTest1 {
                 .average()
                 .ifPresent(System.out::print);
 
-    }
-}
-
-class Student {
-    private String name;
-    private Integer score;
-
-    public Student(String name, Integer score) {
-        this.name = name;
-        this.score = score;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "{"
-                + "\"name\":\"" + name + "\""
-                + ", \"score\":\"" + score + "\""
-                + "}";
     }
 }

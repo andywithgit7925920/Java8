@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Created by ZhangYuZhong on 2017/7/25.
+ * 基本语法
  */
 public class LambdaTest1 {
     public static void main(String[] args) {
@@ -49,10 +51,9 @@ public class LambdaTest1 {
                 add(new Student("stu4",95.0));
             }
         };
-//        Collections.sort(studentList,(s1,s2)-> Double.compare(s1.getScore(),s2.getScore()));
-        Collections.sort(studentList,Comparator.comparing(Student::getScore));
+        Collections.sort(studentList,(s1,s2)-> Double.compare(s1.getScore(),s2.getScore()));
+//        Collections.sort(studentList,Comparator.comparing(Student::getScore));
         System.out.println(studentList);
-
     }
 
     @Test
@@ -70,56 +71,28 @@ public class LambdaTest1 {
      */
     @Test
     public void testThread_(){
-        new Thread(()-> {
-            System.out.println("hello, i am thread!");
-        }).start();
+        new Thread(()-> System.out.println("hello, i am thread!")).start();
     }
 
     /**
      * 一个参数，可以省略参数的括号
      */
-    @Test
+    /*@Test
     public void testOneParameter(){
         testOnePar(x-> System.out.println(x));
-        testOnePar(System.out::print);
-    }
+        testOnePar(System.out::println);
+        testOnePar1(x-> System.out.println("xx"));
+    }*/
+   /* *//**
+     * 需要单个参数
+     *//*
+    public static void testOnePar(MyFunctionalInterface myFunctionalInterface){
+        myFunctionalInterface.single("msg");
+    }*/
     /**
      * 需要单个参数
      */
-    public static void testOnePar(FunctionalInterface functionalInterface){
-        functionalInterface.single("msg");
-    }
-}
-class Student{
-    private String name;
-    private Double score;
-
-    public Student(String name, Double score) {
-        this.name = name;
-        this.score = score;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Double getScore() {
-        return score;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setScore(Double score) {
-        this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "{"
-                + "\"name\":\"" + name + "\""
-                + ", \"score\":\"" + score + "\""
-                + "}";
+    public static void testOnePar1(Consumer unaryOperator){
+        unaryOperator.accept("msg");
     }
 }

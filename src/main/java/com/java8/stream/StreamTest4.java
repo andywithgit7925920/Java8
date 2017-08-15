@@ -1,12 +1,15 @@
 package com.java8.stream;
 
+import com.java8.testcase1.Actor;
 import com.java8.testcase1.DataUtil;
 import com.java8.testcase1.Director;
+import com.java8.testcase1.Movie;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
@@ -24,6 +27,9 @@ public class StreamTest4 {
         Arrays.stream(arr).map(x -> x.toLowerCase()).forEach(System.out::println);
     }
 
+    /**
+     * flapMap：拆解流
+     */
     @Test
     public void testFlapMap1() {
         String[] arr1 = {"a", "b", "c", "d"};
@@ -38,7 +44,7 @@ public class StreamTest4 {
     @Test
     public void testFlapMap2() {
         List<Director> directors = DataUtil.getInstance().praseData();
-       directors.stream().flatMap(x -> x.getMovies().stream()).filter(x -> BigDecimal.TEN.compareTo(x.getOfficeBox())<0).map(x -> x.getMovieName()).forEach(System.out::println);
+        directors.stream().flatMap(x -> x.getMovies().stream()).filter(x -> BigDecimal.TEN.compareTo(x.getOfficeBox())<0).map(Movie::getMovieName).forEach(System.out::println);
     }
 
     /**
@@ -47,6 +53,6 @@ public class StreamTest4 {
     @Test
     public void testFlapMap3() {
         List<Director> directors = DataUtil.getInstance().praseData();
-        directors.stream().filter(x -> ("冯小刚").equals(x.getName())).flatMap(x -> x.getMovies().stream()).flatMap(x -> x.getDirectorList().stream()).map(x -> x.getName()).distinct().forEach(System.out::println);
+        directors.stream().filter(x -> Objects.equals(x.getName(),"冯小刚")).flatMap(x -> x.getMovies().stream()).flatMap(x -> x.getDirectorList().stream()).map(Actor::getName).distinct().forEach(System.out::println);
     }
 }

@@ -5,12 +5,12 @@ import com.java8.testcase1.Director;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
 /**
+ * sorted
  * Created by ZhangYuZhong on 2017/8/2.
  */
 public class StreamTest6 {
@@ -52,7 +52,7 @@ public class StreamTest6 {
         //java8泛型推导的问题，所以如果comparing里面是非方法引用的lambda表达式就没办法直接使用reversed()
         //directorList.stream().sorted(Comparator.comparing(x->x.getMovies().size()).reversed())
         //不能执行，Comparator.reverseOrder()要求Director实现comparable
-        //directorList.stream().sorted(Comparator.comparing(x->x.getMovies().size())).sorted(Comparator.reverseOrder())
+//        directorList.stream().sorted(Comparator.comparing(x->x.getMovies().size())).sorted(Comparator.reverseOrder())
         directorList.stream().sorted(Comparator.comparing(Director::getMovieSize).reversed().thenComparing(Comparator.comparing(Director::getTotalBoxOffice).reversed())).forEach(x-> System.out.println(x.getName()+"->"+x.getMovieSize()+"->"+x.getTotalBoxOffice()));
     }
     /**

@@ -22,12 +22,15 @@ public class StreamTest3 {
     @Test
     public void testArrayStream(){
         //1.通过Arrays.stream
+        //1.1基本类型
         int[] arr = new int[]{1,2,34,5};
         IntStream intStream = Arrays.stream(arr);
+        //1.2引用类型
         Student[] studentArr = new Student[]{new Student("s1",29),new Student("s2",27)};
         Stream<Student> studentStream = Arrays.stream(studentArr);
         //2.通过Stream.of
         Stream<Integer> stream1 = Stream.of(1,2,34,5,65);
+        //注意生成的是int[]的流
         Stream<int[]> stream2 = Stream.of(arr,arr);
         stream2.forEach(System.out::println);
     }
@@ -59,7 +62,7 @@ public class StreamTest3 {
     @Test
     public void testUnlimitStream(){
         //创建无限流
-        //Stream.generate(()->"number"+new Random().nextInt()).limit(100).forEach(System.out::println);
+        Stream.generate(()->"number"+new Random().nextInt()).limit(100).forEach(System.out::println);
         Stream.generate(()->new Student("name",10)).limit(20).forEach(System.out::println);
     }
 
@@ -69,6 +72,7 @@ public class StreamTest3 {
     @Test
     public void testUnlimitStream1(){
         Stream.iterate(0,x->x+1).limit(10).forEach(System.out::println);
+        Stream.iterate(0,x->x).limit(10).forEach(System.out::println);
         //Stream.iterate(0,x->x).limit(10).forEach(System.out::println);
         Stream.iterate(0, UnaryOperator.identity()).limit(10).forEach(System.out::println);
     }

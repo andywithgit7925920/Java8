@@ -1,5 +1,7 @@
-package com.java8.testcase1;
+package com.java8.stream;
 
+import com.java8.testcase1.DataUtil;
+import com.java8.testcase1.Director;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +13,7 @@ import java.util.stream.Stream;
  * Created by ZhangYuZhong on 2017/8/1.
  * filter and distinct
  */
-public class StreamTest05 {
+public class StreamTest8 {
     List<Director> directors;
 
     @Before

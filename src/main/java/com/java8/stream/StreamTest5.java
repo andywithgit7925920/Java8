@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
+ * concat,limit,peek,元素在stream中的执行顺序
  * Created by ZhangYuZhong on 2017/8/2.
  * 流的拆分和合并
  */
@@ -33,7 +34,7 @@ public class StreamTest5 {
      */
     @Test
     public void testSkip(){
-        Stream.of(arr1).skip(2).limit(1).forEach(System.out::println);
+//        Stream.of(arr1).skip(2).limit(2).forEach(System.out::println);
         Stream.iterate(1,x->x+2).skip(1).limit(5).forEach(System.out::println);
     }
 

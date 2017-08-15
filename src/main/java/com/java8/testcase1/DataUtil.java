@@ -3,7 +3,6 @@ package com.java8.testcase1;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URISyntaxException;
@@ -56,9 +55,10 @@ public class DataUtil {
         return null;
     }
 
-    public static void main(String[] args) {
-        List<Director> directors = DataUtil.getInstance().praseData();
-        directors.stream().forEach(System.out::println);
+    public static void main(String[] args) throws URISyntaxException {
+//        List<Director> directors = DataUtil.getInstance().praseData();
+//        directors.stream().forEach(System.out::println);
+        System.out.println(DataUtil.class.getClassLoader().getResource(filePath));
     }
 
 }
