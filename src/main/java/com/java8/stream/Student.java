@@ -3,7 +3,7 @@ package com.java8.stream;
 /**
  * Created by ZhangYuZhong on 2017/8/14.
  */
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private Integer score;
 
@@ -34,5 +34,10 @@ public class Student {
                 + "\"name\":\"" + name + "\""
                 + ", \"score\":\"" + score + "\""
                 + "}";
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return 0;
     }
 }

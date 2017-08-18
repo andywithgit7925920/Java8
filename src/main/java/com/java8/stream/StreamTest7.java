@@ -12,20 +12,17 @@ import java.util.stream.Stream;
  * Optional
  */
 public class StreamTest7 {
-    @Test
-    public void testStream1() {
-        Stream<Integer> stream = Stream.iterate(0, x -> x + 3).limit(100);
+    /*Stream<Integer> stream = Stream.iterate(0, x -> x + 3).limit(100);
         HashSet<Integer> set = stream.collect(HashSet::new, HashSet::add, HashSet::addAll);
         HashSet<Integer> set1 = stream.collect(Collectors.toCollection(HashSet::new));
-        set1.forEach(System.out::println);
-//        set.forEach(System.out::println);
-//        stream.forEach(System.out::println);
-//        Optional<Integer> max = stream.max((x, y)->Integer.compare(x,y));
-//        if (max.isPresent()){
-//            System.out.println(max.get());
-//        }
-//        long size = stream.count();
-//        System.out.println(size);
+        set1.forEach(System.out::println);*/
+    /*Optional<Integer> optional = Stream.of(1,2,3).filter(x->x>1).reduce((x,y)->x+y);
+        System.out.println(optional.get());*/
+    @Test
+    public void testStream1() {
+        Optional<Student> studentOptional = Optional.of(new Student("user1",21));
+        Optional<String> optionalStr = studentOptional.map(Student::getName);
+        System.out.println(optionalStr.get());
     }
 
     public static Optional<Double> inverse(Double x) {
@@ -36,6 +33,9 @@ public class StreamTest7 {
         return x < 0 ? Optional.empty() : Optional.of(Math.sqrt(x));
     }
 
+    /**
+     * Optional的迭代
+     */
     @Test
     public void testStream2() {
         double x = 4d;
@@ -45,9 +45,12 @@ public class StreamTest7 {
         result2.ifPresent(System.out::println);
     }
 
+    /**
+     * 常用操作
+     */
     @Test
-    public void testOptional(){
-        List<String> list = new ArrayList<String>(){
+    public void testOptional() {
+        List<String> list = new ArrayList<String>() {
             {
                 add("user1");
                 add("user2");
@@ -59,13 +62,13 @@ public class StreamTest7 {
     }
 
     @Test
-    public void testOptional2(){
-        Optional<String> result = Optional.of("andy with u");
-        result = Optional.empty();
-        String finalResult = result.orElse("1");
-        System.out.println(finalResult);
-        finalResult = result.orElseGet(()->System.getProperty("user.dir"));
-        finalResult = result.orElseThrow(NoSuchElementException::new);
-        System.out.println(finalResult);
+    public void testOptional2() {
+        Integer[] arr = new Integer[]{4,5,6,7,8,9};
+        Integer result = Stream.of(arr).filter(x->x>9).max(Comparator.naturalOrder()).orElse(-1);
+        System.out.println(result);
+        Integer result1 = Stream.of(arr).filter(x->x>9).max(Comparator.naturalOrder()).orElseGet(()->-1);
+        System.out.println(result1);
+        Integer result2 = Stream.of(arr).filter(x->x>9).max(Comparator.naturalOrder()).orElseThrow(RuntimeException::new);
+        System.out.println(result2);
     }
 }

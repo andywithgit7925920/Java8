@@ -27,6 +27,11 @@ public class StreamTest4 {
         Arrays.stream(arr).map(x -> x.toLowerCase()).forEach(System.out::println);
     }
 
+    @Test
+    public void testFilter(){
+        Integer[] arr = new Integer[]{1,2,3,4,5,6,7,8,9,10};
+        Arrays.stream(arr).filter(x->x>3&&x<8).forEach(System.out::println);
+    }
     /**
      * flapMap：拆解流
      */
@@ -35,7 +40,8 @@ public class StreamTest4 {
         String[] arr1 = {"a", "b", "c", "d"};
         String[] arr2 = {"e", "f", "c", "d"};
         String[] arr3 = {"h", "j", "c", "d"};
-        Stream.of(arr1, arr2, arr3).flatMap(x -> Arrays.stream(x)).distinct().forEach(System.out::println);
+       // Stream.of(arr1, arr2, arr3).flatMap(x -> Arrays.stream(x)).forEach(System.out::println);
+        Stream.of(arr1, arr2, arr3).flatMap(Arrays::stream).forEach(System.out::println);
     }
 
     /**
